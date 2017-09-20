@@ -176,6 +176,7 @@ function addProduct() {
 				connection.query(sqlQuery, function(e3, deptNames) {
 					if (e3) throw e3;
 					var addDept = deptNames.find( element => {
+						console.log(element.department_name, addProduct.department);
 						return element.department_name == addProduct.department;	
 					});
 					console.log("addDept = " + addDept);
