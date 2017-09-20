@@ -36,8 +36,10 @@ The manager view node application performs the following:
     4. Add New Product
 
 I used switch statement to choose the corresponding function to be executed depending on the choice. 
-* If option 1 "View Products for Sale" is chosen then function viewInventory() is called. This function establishes connection with mysql database and performs a select query on the products table. Then the result with columns item_id, product_name, price, stock_quantity are displayed in node console. 
-* If option 2 "View Low Inventory" is chosen then function viewInventory() is called.
+* If option 1 "View Products for Sale" is selected the function viewInventory() is called. This function establishes connection with mysql database and performs a select query on the products table. Then the result with columns item_id, product_name, price, stock_quantity are displayed in node console. 
+* If option 2 "View Low Inventory" is selected the function viewLowInventory() is called. This function establishes connection with mysql database and performs a select query on the products table where the stock_quantity is less than 5. Those records with columns item_id, product_name, price, stock_quantity are then displayed in node console. 
+* If option 3 "Add to Inventory" is selected the function addInventory() is called. This function establishes connection with mysql database, performs a select query on the products table, and displays in inquirer list prompt for the user to choose an item. Once the user selects an item, it prompts for quantity to add, and validates the input for NaN and > 0. Then it finds that particular item in the table and runs update query to update the stock_quantity column, adding the quantity to the exsiting quantity.
+* If option 4 "Add New Product" is selected the function addProduct() is called. This function displays inquirer prompt for the ser to enter Product name, Department name, price, quantity (price and quantity input are validated ofr NaN and > 0). Then it establishes connection with mysql database, and inserts the record into products table.
 
 ## Supervisor view
 
