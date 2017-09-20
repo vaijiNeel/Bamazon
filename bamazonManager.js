@@ -162,12 +162,12 @@ function addProduct() {
 	      	}
 		}
 	]).then(function(addProduct) {
-		var toyPrice = parseInt(addProduct.price).toFixed(2);
-		// console.log(toyPrice);
+		var itemPrice = parseInt(addProduct.price).toFixed(2);
+		// console.log(itemPrice);
 		connection.connect(function(e1) {
 			if (e1) throw e1;
 			sqlQuery = `insert into products (product_name, department_name, price, stock_quantity)
-				values ('${addProduct.product}', '${addProduct.department}', ${toyPrice}, ${parseInt(addProduct.quantity)} ) `;
+				values ('${addProduct.product}', '${addProduct.department}', ${itemPrice}, ${parseInt(addProduct.quantity)} ) `;
 			connection.query(sqlQuery, function(e2, productUpdated) {
 				if (e2) throw e2;
 				console.log("Added product" );
