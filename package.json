@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vaijiNeel/Bamazon#readme",
   "dependencies": {
+    "console.table": "^0.9.1",
     "inquirer": "^3.3.0",
     "mysql": "^2.14.1"
   }

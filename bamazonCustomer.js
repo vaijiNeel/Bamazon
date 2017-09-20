@@ -53,25 +53,24 @@ function customerData() {
 			]).then(function(buyItem) {
 				//check quantity needed is available in stock
 				// console.log("buyItem: " + buyItem.item);
-				var selectedItem = [];
-				for (var i = 0; i < productDetails.length; i++) {
-					if(productDetails[i].item_id === parseInt(buyItem.item)) {
-						selectedItem.push(productDetails[i]);
-						break;
-					}
-				}
-				// console.log("selected item: " + selectedItem[0].item_id);
-				var totalQty = selectedItem[0].stock_quantity;
+				var selectedItem = productDetails.find( element => {
+					return element.item_id == buyItem.item;	
+				});
+				// console.log("selected item: " + selectedItem.item_id);
+				var totalQty = selectedItem.stock_quantity;
 				// console.log(totalQty, buyItem.quantity);
 				if (totalQty >= buyItem.quantity) {
 					totalQty -= parseInt(buyItem.quantity);
+					var totalPrice = selectedItem.price * parseInt(buyItem.quantity).toFixed(2);
+					var productSale = selectedItem.product_sales + totalPrice;
 					//update total subtract with quantity purchased
-					sqlQuery = `update products set stock_quantity = ${totalQty} where item_id = ${buyItem.item} `;
+					sqlQuery = `update products set stock_quantity = ${totalQty} , product_sales = ${productSale}
+						where item_id = ${buyItem.item} `;
 					connection.query(sqlQuery, function(e3, productUpdated) {
 						if (e3) throw e3;
 						//display total price
-						console.log("Total purchase price ($): " + 
-							(selectedItem[0].price * parseInt(buyItem.quantity)).toFixed(2) )
+						console.log("Total purchase price ($): " + totalPrice);
+						console.log(productUpdated);
 						connection.end();
 					});
 				}
@@ -79,9 +78,13 @@ function customerData() {
 					console.log("Insufficient quantity in stock!");
 					connection.end();
 				}
+			}).catch(function (err) {
+				console.log(err);
+			    console.log("Promise Rejected");
 			});
 		});
 	});
 }
 
+// execution start
 customerData();
