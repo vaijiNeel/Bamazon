@@ -63,5 +63,8 @@ The Supervisor view application when run, prompts user with 2 options - View Pro
     console - https://github.com/vaijiNeel/Bamazon/blob/master/images/addDept.PNG 
     table after - https://github.com/vaijiNeel/Bamazon/blob/master/images/addDeptAfter.PNG
 
-Also updated the function addProduct() in Manager view application, so that when a new product is added if the department is not present in departments table, the application will insert the new deparment details with dummy over_head_cost in departments table. Here are the screenshots - 
+Also updated the function addProduct() in Manager view application, so that when a new product is added if the department is not present in departments table, the application will insert the new deparment details with dummy over_head_cost in departments table. Here are the screenshots:
+    Table data before add - https://github.com/vaijiNeel/Bamazon/blob/master/images/tableProdAddProdBefore.PNG,  https://github.com/vaijiNeel/Bamazon/blob/master/images/tableDeptAddProdBefore.PNG
+    Console output - add new department - https://github.com/vaijiNeel/Bamazon/blob/master/images/addProdDeptConsole.PNG
+    Console output - department already exists - https://github.com/vaijiNeel/Bamazon/blob/master/images/deptAlreadyExists.PNG
 
