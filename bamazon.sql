@@ -8,6 +8,7 @@ create table products (
     department_name varchar(100),
     price float(10,2),
     stock_quantity integer(8),
+    unique (product_name),
     primary key (item_id)
 );
 
@@ -33,6 +34,7 @@ create table departments (
 	department_id int(10) auto_increment not null,
     department_name varchar(100),
     over_head_costs int(10),
+    unique (department_name),
     primary key (department_id)
 );
 
@@ -55,8 +57,8 @@ update products set product_sales = 0.00;
 
 update products set stock_quantity = 12 where item_id = 1006;
 
-delete from products where department_name = "furnitures";
-delete from departments where department_name = "furnitures";
+delete from products where product_name = "wooden table";
+delete from departments where department_name = "furnitures" and department_id=113;
 
 select * from products;
 select * from departments;

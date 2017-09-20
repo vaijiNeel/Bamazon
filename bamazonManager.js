@@ -176,20 +176,19 @@ function addProduct() {
 				connection.query(sqlQuery, function(e3, deptNames) {
 					if (e3) throw e3;
 					var addDept = deptNames.find( element => {
-						console.log(element.department_name, addProduct.department);
 						return element.department_name == addProduct.department;	
 					});
-					console.log("addDept = " + addDept);
-					if(typeof addDept === undefined) {
-						console.log("Department already exists in table");
+					// console.log("addDept = " + addDept);
+					// if(typeof addDept == "undefined") {
+					if(addDept) {
+						console.log("\nDepartment already exists in table");
 					} else {
 						// console.log("not exists");
 						sqlQuery = `insert into departments (department_name, over_head_costs) 
 							values ('${addProduct.department}', ${500.00}) `;
 						connection.query(sqlQuery, function(e4, addDeptNames) {
 							if (e4) throw e4;
-							console.log("Added department" );
-							console.log(addDeptNames);
+							console.log("\nAdded department - ", addDeptNames);
 						});
 					}
 					connection.end();
