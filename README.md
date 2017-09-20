@@ -54,12 +54,14 @@ For Supervisor view I created a new table called departments with columns depart
 * https://github.com/vaijiNeel/Bamazon/blob/master/images/CreateDepartmentsTable.PNG
 * https://github.com/vaijiNeel/Bamazon/blob/master/images/InsertDepartmentData.PNG
 
-Then installed console.table npm module to display the table records in node console in tabular format. Added column product_sales to products table and populated it with dummy data - 
+Then installed console.table npm module to display the table records in node console in tabular format. Added column product_sales to products table and populated it with dummy data - https://github.com/vaijiNeel/Bamazon/blob/master/images/productSalesCol.PNG
 
 The Supervisor view application when run, prompts user with 2 options - View Product Sales by Department and Create New Department.
-* If option 1 "View Product Sales by Department" is selected the function viewDepartments() is called. This function establishes connection with mysql database, performs a select query doing a inner join of products and deparments tables, grouping by deparment_name and summing product_sales. Then subtracting over_head_costs from summed product_sales it displays another column called total_profit. Here is the screenshot of the console output - 
+* If option 1 "View Product Sales by Department" is selected the function viewDepartments() is called. This function establishes connection with mysql database, performs a select query doing a inner join of products and deparments tables, grouping by deparment_name and summing product_sales. Then subtracting over_head_costs from summed product_sales it displays another column called total_profit. Here is the screenshot of the console output - https://github.com/vaijiNeel/Bamazon/blob/master/images/totalProfit.PNG
 
-* If option 2 "Create New Department" is selected the function addDepartment() is called. This function prompts user for department_name and over_head_cost (the input is validated for NaN and > 0 and convereted to float with 2 digits after decimal). Once the input is entered it establishes connection with mysql database, and inserts data into departments table. Here are the screenshots - 
+* If option 2 "Create New Department" is selected the function addDepartment() is called. This function prompts user for department_name and over_head_cost (the input is validated for NaN and > 0 and convereted to float with 2 digits after decimal). Once the input is entered it establishes connection with mysql database, and inserts data into departments table. Here are the screenshots: 
+    console - https://github.com/vaijiNeel/Bamazon/blob/master/images/addDept.PNG 
+    table after - https://github.com/vaijiNeel/Bamazon/blob/master/images/addDeptAfter.PNG
 
 Also updated the function addProduct() in Manager view application, so that when a new product is added if the department is not present in departments table, the application will insert the new deparment details with dummy over_head_cost in departments table. Here are the screenshots - 
 
