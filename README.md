@@ -2,7 +2,7 @@
 
 The Bamazon project consists of 3 node applications - Customer view, Manager view, and Supervisor view. The customer view lets the user to view all the products, buy products, etc. The manager's view lets manager perform operations like view low inventory, add inventory, add products, etc. The Supervisor view will let user view department-wise total profits, product sales. This project was created using Node JS, mySQL, and npm modules - mysql, inquirer, console.table. 
 
-##Customer view
+## Customer view
 
 First I created database called bamazon, and then table products as shown in the screenshot below:
 
@@ -36,10 +36,11 @@ The manager view node application performs the following:
     4. Add New Product
 
 I used switch statement to choose the corresponding function to be executed depending on the choice. 
-* If option 1 "View Products for Sale" is selected the function viewInventory() is called. This function establishes connection with mysql database and performs a select query on the products table. Then the result with columns item_id, product_name, price, stock_quantity are displayed in node console. 
-* If option 2 "View Low Inventory" is selected the function viewLowInventory() is called. This function establishes connection with mysql database and performs a select query on the products table where the stock_quantity is less than 5. Those records with columns item_id, product_name, price, stock_quantity are then displayed in node console. 
-* If option 3 "Add to Inventory" is selected the function addInventory() is called. This function establishes connection with mysql database, performs a select query on the products table, and displays in inquirer list prompt for the user to choose an item. Once the user selects an item, it prompts for quantity to add, and validates the input for NaN and > 0. Then it finds that particular item in the table and runs update query to update the stock_quantity column, adding the quantity to the exsiting quantity.
-* If option 4 "Add New Product" is selected the function addProduct() is called. This function displays inquirer prompt for the ser to enter Product name, Department name, price, quantity (price and quantity input are validated ofr NaN and > 0). Then it establishes connection with mysql database, and inserts the record into products table.
+* If option 1 "View Products for Sale" is selected the function viewInventory() is called. This function establishes connection with mysql database and performs a select query on the products table. Then the result with columns item_id, product_name, price, stock_quantity are displayed in node console. Here is the screenshot of node console output:
+
+* If option 2 "View Low Inventory" is selected the function viewLowInventory() is called. This function establishes connection with mysql database and performs a select query on the products table where the stock_quantity is less than 5. Those records with columns item_id, product_name, price, stock_quantity are then displayed in node console. Here is the screenshot of node console output:
+* If option 3 "Add to Inventory" is selected the function addInventory() is called. This function establishes connection with mysql database, performs a select query on the products table, and displays in inquirer list prompt for the user to choose an item. Once the user selects an item, it prompts for quantity to add, and validates the input for NaN and > 0. Then it finds that particular item in the table and runs update query to update the stock_quantity column, adding the quantity to the exsiting quantity. Here are the screenshots of node console output and table data:
+* If option 4 "Add New Product" is selected the function addProduct() is called. This function displays inquirer prompt for the ser to enter Product name, Department name, price, quantity (price and quantity input are validated ofr NaN and > 0). Then it establishes connection with mysql database, and inserts the record into products table. Here are the screenshots of node console output and table data:
 
 ## Supervisor view
 
