@@ -71,3 +71,6 @@ Also updated the function addProduct() in Manager view application, so that when
 * Console output - add new department - https://github.com/vaijiNeel/Bamazon/blob/master/images/addProdDeptConsole.PNG
 * Console output - department already exists - https://github.com/vaijiNeel/Bamazon/blob/master/images/deptAlreadyExists.PNG
 
+
+## Bamazon Demo
+Also you can watch demo on this application here - https://youtu.be/shKJnz9StpU
