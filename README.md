@@ -74,3 +74,6 @@ Also updated the function addProduct() in Manager view application, so that when
 
 ## Bamazon Demo
 Also you can watch a demo on this application here - https://youtu.be/shKJnz9StpU
+
+## Contributor:
+* Vaiji Neelakandan
