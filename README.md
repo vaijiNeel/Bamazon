@@ -1,6 +1,6 @@
 # Bamazon
 
-The Bamazon project consists of 3 node applications - Customer view, Manager view, and Supervisor view. The customer view lets the user to view all the products, buy products, etc. The manager's view lets manager perform operations like view low inventory, add inventory, add products, etc. The Supervisor view will let user view department-wise total profits, product sales. This project was created using Node JS, mySQL, and npm modules - mysql, inquirer, console.table. 
+The Bamazon project consists of 3 node applications - Customer view, Manager view, and Supervisor view. The customer view lets the user to view all the products, buy products, etc. The manager's view let's manager perform operations like view low inventory, add inventory, add products, etc. The Supervisor view will let user view department-wise total profits, product sales. This project was created using Node JS, mySQL, and npm modules - mysql, inquirer, console.table. 
 
 ## Customer view
 First I created database called bamazon, and then table products as shown in the screenshot below:
